@@ -1,0 +1,10 @@
+Package: bowlR
+Type: Package
+Title: Visualizes ODI cricket data
+Version: 0.1.0
+Author: Taha Tehseen
+Maintainer: Taha Tehseen <tahatehseen96@hotmail.com>
+Description: This packages gets ODI cricket data and aggregates it. This could mean comparing teams with one another or looking at individual player performances for a match.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
