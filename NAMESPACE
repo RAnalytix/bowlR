@@ -1,1 +1,1 @@
-export(showResults,getData, showProgress)
+export(showResults,getData, showProgress, getMatches)

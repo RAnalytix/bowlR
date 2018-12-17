@@ -4,16 +4,20 @@
 #'
 #'
 #' @param team
-#' @param date
+#' The team you want to see matches for. Default is NA; all teams.
+#' @param from
+#' The lower limit for the date, in YYYY-MM-DD format, to narrow searches. Only works if a corresponding 'till' argument provided. Set to NA by default.
+#' @param till
+#' The upper limit for the date, in YYYY-MM-DD format, to narrow searches. Only works if a corresponding 'from' argument provided. Set to NA by default.
 #'
 #'
 #' @return
 #'
-#' @examples showProgress("England", "2017-03-05")
+#' @examples showProgress("England")
 #'
 #' @export
 
-getMatches <- function(team = NA, date = NA) {
+getMatches <- function(team = NA, from = NA, till = NA) {
   # Making the header
   header <- as.character(listOfMatches[[1]][1:17,2])
   header[1:2] <- c("team 1", "team 2")
@@ -29,10 +33,17 @@ getMatches <- function(team = NA, date = NA) {
   indices <- which(!grepl("[0-9]", dat$`match number`))
   dat[indices,8:17] <- dat[indices,7:16]
   dat <- dat[,1:17]
+  dat$`match number` <- as.numeric(dat$`match number`)
 
+  if (!is.na(team)) {
+    dat <- dat[dat$`team 1` == team | dat$`team 2` == team,]
+  }
+  if (!is.na(from)&!is.na(till)) {
+    ll <- as.Date(from)
+    ul <- as.Date(till)
+    orig.date <- as.Date(dat$date)
+    dat <- dat[orig.date > ll & orig.date <ul,]
+  }
   return(dat)
 }
-
-showProgress("Australia", "2006/03/05")
-
 

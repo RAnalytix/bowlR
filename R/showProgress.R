@@ -92,6 +92,6 @@ showProgress <- function(team, date) {
             subtitle = date)
 }
 
-showProgress("Australia", "2006/03/05")
+#showProgress("Australia", "2006/03/05")
 
 
