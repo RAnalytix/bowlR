@@ -47,3 +47,5 @@ getMatches <- function(team = NA, from = NA, till = NA) {
   return(dat)
 }
 
+data <- getMatches("Pakistan", "2010-01-01", "2015-06-01")
+head(data, 10)

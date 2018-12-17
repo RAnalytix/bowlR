@@ -9,12 +9,12 @@
 #'
 #' @return NULL
 #'
-#' @examples showResults("Pakistan", 2008, 2010)
+#' @examples getBreakdown("Pakistan", 2008, 2010)
 #'
 #' @export
 
 
-showResults <- function(team = "All", from = 2006, till = 2017) {
+getBreakdown <- function(team = "All", from = 2006, till = 2017) {
 
   getYearRow <- function(df) which(df == "date", arr.ind = T)
   years <- sapply(listOfMatches, function(df) df[getYearRow(df)[1], getYearRow(df)[2]+1])
