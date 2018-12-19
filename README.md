@@ -3,7 +3,11 @@
 
 ## Installation
 
-Make sure you have devtools installed and loaded. You can do that by running `install.packages("devtools")` followed by `library(devtools)`. Next, you can install `bowlR` by running `devtools::install_github(“ttehseen/bowlR”)`, again followed by `library(bowlr)`.
+Make sure you have devtools installed and loaded. You can do that by running `install.packages("devtools")` followed by `library(devtools)`. Next, you can install `bowlR` by running 
+``` R 
+devtools::install_github(“ttehseen/bowlR”)
+library(bowlR)
+```
 
 ## Data
 
